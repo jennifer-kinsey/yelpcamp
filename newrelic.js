@@ -1,0 +1,34 @@
+'use strict'
+/**
+ * New Relic agent configuration.
+ *
+ * See lib/config/default.js in the agent distribution for a more complete
+ * description of configuration variables and their potential values.
+ */
+exports.config = {
+  /**
+   * Array of application names.
+   */
+  app_name: ['JAREDS APP'],
+  /**
+   * Your New Relic license key.
+   */
+  license_key: '38faab81f068f6d2bfb305c86da60cc739dae12f',
+  logging: {
+    /**
+     * Level at which to log. 'trace' is most useful to New Relic when diagnosing
+     * issues with the agent, 'info' and higher will impose the least overhead on
+     * production applications.
+     */
+    level: 'trace',
+  },
+  transaction_tracer: {
+    enabled: true,
+    explain_threshold: 1,
+    record_sql: "raw",
+    capture_params: true,
+  },
+  audit_log : {
+    enabled: true
+  }
+}
